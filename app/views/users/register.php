@@ -1,30 +1,54 @@
 <?php require_once APPROOT . '/views/inc/header.php' ?>
 <div class="row">
   <div class="col-md-6 mx-auto">
-    <div class="card card-body bg-light mt-5">
+    <div class="card card-body bg-light mt-5 bg-dark text-white">
       <h2>Create an Account</h2>
       <p>Please fill the form to register with us.</p>
-      <form action="<?php echo URLROOT ?>. '/users/register' " method="post">
+      <form action="<?php echo URLROOT ?>/users/register" method="POST">
         <div class="form-group">
           <label for="name">Name:
             <sup>*</sup>
           </label>
-          <input type="text" name="name" class="form-control form-control-lg <?php echo (!empty($data['name_err'])) ? is - invalid : ''; ?>" value="<?php echo $data['name']; ?>">
+          <input type="text" name="name" class="form-control form-control-lg <?php echo (!empty($data['name_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['name']; ?>">
           <span class="invalid-feedback"><?php echo $data['name_err']; ?></span>
-          <label for="name">Email:
+        </div>
+        <div class="form-group">
+          <label for="email">Email:
             <sup>*</sup>
           </label>
-          <input type="text" name="name" class="form-control form-control-lg <?php echo (!empty($data['email_err'])) ? is - invalid : ''; ?>" value="<?php echo $data['email']; ?>">
+          <input type="email" name="email" class="form-control form-control-lg <?php echo (!empty($data['email_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['email']; ?>">
           <span class="invalid-feedback"><?php echo $data['email_err']; ?></span>
-          <label for="name">Password:
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password:
             <sup>*</sup>
           </label>
-          <input type="passowrd" name="password" class="form-control form-control-lg <?php echo (!empty($data['password_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['password']; ?>">
+          <input type="password" name="password" class="form-control form-control-lg <?php echo (!empty($data['password_err'])) ? 'is-invalid' : ''; ?>" value="">
           <span class="invalid-feedback"><?php echo $data['password_err']; ?></span>
+          </>
+        </div>
+        <div class="form-group">
+          <label for="confirm_password">Confirm Password:
+            <sup>*</sup>
+          </label>
+          <input type="password" name="confirm_password" class="form-control form-control-lg <?php echo (!empty($data['confirm_password_err'])) ? 'is-invalid' : ''; ?>" value="">
+          <span class="invalid-feedback"><?php echo $data['confirm_password_err']; ?></span>
+        </div>
+        <div class="row">
+          <div class="col">
+            <input type="submit" value="Register" class="btn btn-success btn-block">
+          </div>
+          <div class="col">
+            <a class="btn-light btn-block btn" href="<?php echo URLROOT; ?> /users/login">Have an Account? Login</a>
+          </div>
         </div>
       </form>
+      <!-- End of Card body  -->
     </div>
   </div>
 </div>
+
+
 
 <?php require_once APPROOT . '/views/inc/footer.php' ?>
