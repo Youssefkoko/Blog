@@ -22,8 +22,12 @@
         </li>
       </ul>
       <div class="col-4  justify-content-end align-items-center">
-        <a class="btn btn-sm btn-outline-secondary" href="<?php echo URLROOT . '/users/register'; ?> ">Sign up</a>
-        <a class="btn btn-sm btn-outline-secondary" href="<?php echo URLROOT . '/users/login'; ?>">Login</a>
+        <?php if (isset($_SESSION['user_id'])) : ?>
+          <a class="btn btn-sm btn-outline-secondary" href="<?php echo URLROOT . '/users/logout'; ?> ">Logout</a>
+        <?php else : ?>
+          <a class="btn btn-sm btn-outline-secondary" href="<?php echo URLROOT . '/users/register'; ?> ">Sign up</a>
+          <a class="btn btn-sm btn-outline-secondary" href="<?php echo URLROOT . '/users/login'; ?>">Login</a>
+        <?php endif; ?>
       </div>
     </div>
   </div>
