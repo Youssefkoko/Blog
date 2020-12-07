@@ -1,8 +1,8 @@
 <?php
 // DATABASE PARAMS 
 define('DB_HOST', 'localhost');
-define('DB_USER', 'youssef');
-define('DB_PASS', '123456');
+define('DB_USER', 'youssef-x');
+define('DB_PASS', 'koko/8520*K?');
 define('DB_NAME', 'blog');
 
 // App Root 
