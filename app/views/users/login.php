@@ -7,7 +7,7 @@
       <p>Please fill the form to Login .</p>
       <form action="<?php echo URLROOT ?>/users/login" method="post">
         <div class="form-group">
-          <label for="password">Password:
+          <label for="password">Email:
             <sup>*</sup>
           </label>
 
